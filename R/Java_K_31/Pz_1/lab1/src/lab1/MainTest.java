@@ -19,7 +19,6 @@ public class MainTest {
 
     // ТЕСТИ ДЛЯ countLessThanSeven (рахунок <7)
 
-//мішаний масив, очікуємо 4 (<7: 1,6,-1,0).
     @Test
     public void testCountZvichaynyy() {
         System.out.println("Тест: countLessThanSeven({1,6,7,8,-1,0})");
@@ -29,9 +28,7 @@ public class MainTest {
         int actual = instance.countLessThanSeven(arr);
         assertEquals(expected, actual);
     }
-
-
-    //Всі >=7: очікуємо 0.
+    
     @Test
     public void testCountVsiVeliki() {
         System.out.println("Тест: countLessThanSeven({7,8,100})");
@@ -42,7 +39,7 @@ public class MainTest {
         assertEquals(expected, actual);
     }
 
-    //Всі <7: очікуємо 5.
+
     @Test
     public void testCountVsiMali() {
         System.out.println("Тест: countLessThanSeven({-100,0,6,-50,3})");
@@ -55,7 +52,7 @@ public class MainTest {
 
     // ТЕСТИ ДЛЯ productBetweenZeros (добуток між 0)
 
-    //Загальний: {1,0,2,3,0,4} — очікуємо 6.0 (2*3).
+
     @Test
     public void testProductZvichaynyy() {
         System.out.println("Тест: productBetweenZeros({1,0,2,3,0,4})");
@@ -83,12 +80,12 @@ public class MainTest {
         System.out.println("Тест: productBetweenZeros({1,0,2,3,4,0,5,0})");
         int[] arr = {1, 0, 2, 3, 4, 0, 5, 0};
         Main instance = new Main();
-        double expected = 24.0;
+        double expected = 24.1;
         double actual = instance.productBetweenZeros(arr);
         assertEquals(expected, actual, EPS);
     }
 
-    // Один нуль: {1,2,3,0} — очікуємо 1.0
+    // Один нуль: {1,2,3,0} — очікуємо 0.0 (виняток: менше двох нулів)
     @Test
     public void testProductOdinNul() {
         System.out.println("Тест: productBetweenZeros({1,2,3,0})");
@@ -99,8 +96,7 @@ public class MainTest {
         assertEquals(expected, actual, EPS);
     }
 
-    //Без нулів: {1,2,3} — очікуємо 2.0.
-
+    //Без нулів: {1,2,3} — очікуємо 0.0 (виняток: менше двох нулів)
     @Test
     public void testProductBezNuliv() {
         System.out.println("Тест: productBetweenZeros({1,2,3})");
@@ -110,4 +106,6 @@ public class MainTest {
         double actual = instance.productBetweenZeros(arr);
         assertEquals(expected, actual, EPS);
     }
-}
+
+    
+    }
