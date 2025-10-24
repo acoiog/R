@@ -29,9 +29,11 @@ public class Main {
             }
         }
 
-        if (secondZero == -1) {  // виняток якщо не знайшли два нулі 
-            return 1.0;  
-        }//добуток
+        if (secondZero == -1) {  // Якщо не знайшли два нулі 
+            System.out.println("Немає двох нулів у масиві!");  // Вивід у консоль
+            return 0.0;  // Повертаємо 0 замість 1, щоб відрізнити від нормального випадку з порожнім проміжком
+        }
+        // Добуток
         double prod = 1.0; 
         for (int i = firstZero + 1; i < secondZero; i++) {  
             prod *= arr[i];  
